@@ -12,7 +12,7 @@ import {
 } from "react-icons/fa";
 
 const socket =
-  io("http://localhost:5000");
+  io(import.meta.env.VITE_API_URL);
 
 
 function App() {
@@ -190,7 +190,7 @@ function App() {
     try {
 
       const response = await fetch(
-        "http://localhost:5000/api/auth/users"
+        `${import.meta.env.VITE_API_URL}/api/auth/users`
       );
 
       const data = await response.json();
@@ -789,7 +789,7 @@ function App() {
                         try {
 
                           const response = await fetch(
-                            "http://localhost:5000/api/follow/follow",
+                            `${import.meta.env.VITE_API_URL}/api/follow/follow`,
                             {
                               method: "PUT",
 
